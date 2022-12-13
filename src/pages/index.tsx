@@ -66,12 +66,13 @@ export default function Home() {
               onClickLanguage={(language) =>
                 handleAddLanguageInFilter(language || '')
               }
+              filterByLanguages={filterByLanguages}
             />
           ))}
         </Style.ListCards>
       </main>
     );
-  }, [loading, error, data, handleAddLanguageInFilter]);
+  }, [loading, error, data, filterByLanguages, handleAddLanguageInFilter]);
 
   return (
     <>
