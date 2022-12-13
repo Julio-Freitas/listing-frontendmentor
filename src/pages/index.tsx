@@ -1,7 +1,7 @@
 import useFetchList from 'hooks/useFetchList';
 import { Card, Footer, Head, Header } from 'components';
-import * as Style from './style';
-import { useMemo, useState } from 'react';
+import * as Style from '../styles/styles';
+import { useCallback, useMemo, useState } from 'react';
 import { Item } from 'types';
 import { LanguageType } from './api/types';
 
@@ -24,31 +24,27 @@ export default function Home() {
       : response?.data;
   }, [filterByLanguages, response?.data]);
 
-  const handleAddLanguageInFilter = (value: string) => {
-    const newData = filterByLanguages?.includes(value)
-      ? filterByLanguages
-      : [...filterByLanguages, value];
+  const handleAddLanguageInFilter = useCallback(
+    (value: string) => {
+      const newData = filterByLanguages?.includes(value)
+        ? filterByLanguages
+        : [...filterByLanguages, value];
 
-    setFilterByLanguages(newData);
-  };
+      setFilterByLanguages(newData);
+    },
+    [filterByLanguages]
+  );
 
-  return (
-    <>
-      <Head description="Create Listgin whith filter" title="Listing Filter" />
-      <Header
-        tagsFilter={filterByLanguages}
-        onClickTagsHeader={(tag) =>
-          setFilterByLanguages(filterByLanguages.filter((item) => item !== tag))
-        }
-      />
-      {!loading && (
+  const renderListing = useMemo(() => {
+    if (loading)
+      return (
         <Style.Loading>
           <Style.LoadingCard />
         </Style.Loading>
-      )}
+      );
+    if (error?.trim() && !loading) return <h1>Algo de errado aconteceu!</h1>;
 
-      {error?.trim() && !loading && <h1>Algo de errado aconteceu!</h1>}
-
+    return (
       <main>
         <Style.ListCards role="list">
           {data?.map((item) => (
@@ -74,6 +70,19 @@ export default function Home() {
           ))}
         </Style.ListCards>
       </main>
+    );
+  }, [loading, error, data, handleAddLanguageInFilter]);
+
+  return (
+    <>
+      <Head description="Create Listgin whith filter" title="Listing Filter" />
+      <Header
+        tagsFilter={filterByLanguages}
+        onClickTagsHeader={(tag) =>
+          setFilterByLanguages(filterByLanguages.filter((item) => item !== tag))
+        }
+      />
+      {renderListing}
       <Footer />
     </>
   );

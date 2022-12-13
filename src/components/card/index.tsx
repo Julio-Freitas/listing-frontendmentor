@@ -16,7 +16,14 @@ export const Card = ({
   isFeatured
 }: CardProps) => (
   <Styled.Card hasBorder={isNew || isFeatured} role="listitem">
-    {logo && <Image src={logo} width={60} height={60} alt="image card" />}
+    {logo && (
+      <Image
+        src={logo}
+        width={60}
+        height={60}
+        alt={`card image of ${company}`}
+      />
+    )}
 
     <Styled.Content>
       <Styled.Header>

@@ -1,11 +1,12 @@
 import React, { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { act, render, screen, waitFor } from '@testing-library/react';
-import { listDataFailHandlers } from '../../mocks/handlers';
-import { server } from '../../mocks/server';
-import { Theme } from '../../styles/theme';
-import Home from '..';
+import { listDataFailHandlers } from '../mocks/handlers';
+
+import { Theme } from '../styles/theme';
+import Home from '../pages';
 import userEvent from '@testing-library/user-event';
+import { server } from '../mocks/server';
 
 const renderWithProviderTheme = (component: ReactNode) => {
   return {
