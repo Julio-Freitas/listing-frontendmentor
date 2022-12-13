@@ -16,5 +16,3 @@ jobs:
       - name: Install Vercel CLI
         run: yarn deploy:prod
         needs: linter
-
-
