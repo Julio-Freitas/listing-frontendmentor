@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> should be render correctly 1`] = `
+<footer>
+  <a
+    href="https://github.com/Julio-Freitas"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Powered by Julio
+  </a>
+</footer>
+`;

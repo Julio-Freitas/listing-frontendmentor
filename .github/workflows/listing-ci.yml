@@ -1,0 +1,27 @@
+name: 'Listing CI (integration continuos)'
+
+on:
+  push:
+    branches: ['main', 'develop']
+
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installation
+        run: yarn install
+      - name: Running linter
+        run: yarn lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installation
+        run: yarn install
+      - name: Running tests
+        run: yarn test

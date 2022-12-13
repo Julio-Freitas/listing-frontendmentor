@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> should be render correctly 1`] = `
+.c0 {
+  background: hsl(180,29%,50%);
+  width: 100%;
+  height: 124px;
+  position: relative;
+  margin-bottom: 2.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 div:first-child {
+  background-image: url('/images/bg-header-desktop.svg');
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.c1 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 96%;
+  background: #fff;
+  padding: 1.5rem;
+  bottom: -0.5rem;
+  margin: 0 auto;
+  gap: 2.5rem;
+}
+
+.c2 {
+  font-size: 1.5rem;
+  padding: 0.8rem 0.5rem;
+  border-radius: 0.5rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  gap: 1rem;
+  position: relative;
+  background: hsl(180,29%,50%);
+  color: hsl(180,52%,96%);
+}
+
+.c2:hover {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.c2:hover::after {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  content: '';
+  background-image: url(images/icon-remove.svg);
+  width: 20px;
+  height: 100%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-color: #000;
+  position: absolute;
+  right: -20px;
+  background-position: center;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+<header
+  class="c0"
+  data-testid="header"
+>
+  <div />
+  <ul
+    class="c1"
+    role="list-skills-header"
+  >
+    <li
+      class="c2"
+      role="listitem-skills"
+    >
+      CSS
+    </li>
+    <li
+      class="c2"
+      role="listitem-skills"
+    >
+      HTML
+    </li>
+  </ul>
+</header>
+`;
