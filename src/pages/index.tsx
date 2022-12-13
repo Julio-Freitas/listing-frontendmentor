@@ -72,7 +72,7 @@ export default function Home() {
         </Style.ListCards>
       </main>
     );
-  }, [loading, error, data, handleAddLanguageInFilter]);
+  }, [loading, error, data, filterByLanguages, handleAddLanguageInFilter]);
 
   return (
     <>
