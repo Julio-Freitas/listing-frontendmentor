@@ -13,7 +13,8 @@ export const Card = ({
   postedAt,
   onClickLanguage,
   isNew,
-  isFeatured
+  isFeatured,
+  filterByLanguages
 }: CardProps) => (
   <Styled.Card hasBorder={isNew || isFeatured} role="listitem">
     {logo && (
@@ -55,6 +56,7 @@ export const Card = ({
         <Styled.Skill
           onClick={() => onClickLanguage && onClickLanguage(language)}
           key={language}
+          select={filterByLanguages?.includes(language) ?? false}
         >
           {language}
         </Styled.Skill>

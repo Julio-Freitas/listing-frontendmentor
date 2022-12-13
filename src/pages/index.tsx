@@ -66,6 +66,7 @@ export default function Home() {
               onClickLanguage={(language) =>
                 handleAddLanguageInFilter(language || '')
               }
+              filterByLanguages={filterByLanguages}
             />
           ))}
         </Style.ListCards>

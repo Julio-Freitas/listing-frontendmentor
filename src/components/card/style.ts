@@ -100,7 +100,7 @@ export const Skills = styled.div`
   gap: 15px;
 `;
 
-export const Skill = styled.div`
+export const Skill = styled.div<{ select: boolean }>`
   font-size: 1.5rem;
   background: ${({ theme }) =>
     theme.colors.secondary.lightGrayishCyanBackground};
@@ -111,6 +111,10 @@ export const Skill = styled.div`
   cursor: pointer;
   border-radius: 0.3rem;
   transition: all 0.5s;
+
+  background: ${({ theme, select }) => select && theme.colors.primary.darkCyan};
+  color: ${({ theme, select }) =>
+    select && theme.colors.secondary.lightGrayishCyanBackground};
 
   :hover {
     background: ${({ theme }) => theme.colors.primary.darkCyan};
