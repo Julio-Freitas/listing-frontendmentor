@@ -12,7 +12,9 @@
     "eslint": "eslint src",
     "test:ci": "jest --ci",
     "commit": "git cz",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "npx vercel --token=${VERCEL_TOKEN}",
+    "deploy:prod": "yarn deploy --prod --confirm --no-clipboard"
   },
   "dependencies": {
     "@types/node": "18.11.10",

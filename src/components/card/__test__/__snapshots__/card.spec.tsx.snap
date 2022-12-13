@@ -244,7 +244,7 @@ exports[`<Card /> should be render correctly 1`] = `
   role="listitem"
 >
   <img
-    alt="image card"
+    alt="card image of Photosnap"
     data-nimg="1"
     decoding="async"
     height="60"
